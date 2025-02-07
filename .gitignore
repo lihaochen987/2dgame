@@ -85,3 +85,8 @@ config.local.*
 *.bak
 *~
 *.swp
+
+# vcpkg
+vcpkg_installed/
+.vcpkg/
+vcpkg.json.bak
