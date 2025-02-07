@@ -30,3 +30,58 @@
 *.exe
 *.out
 *.app
+
+# Rider specific
+.idea/
+.idea_modules/
+cmake-build-*/
+*.sln.iml
+out/
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# VS Code (in case you also use it)
+.vscode/
+*.code-workspace
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build directories
+build/
+bin/
+Debug/
+Release/
+x64/
+Win32/
+
+# Local configuration
+*.local.conf
+config.local.*
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Backup files
+*.bak
+*~
+*.swp
