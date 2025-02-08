@@ -4,6 +4,13 @@ project(2dgame)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_CXX_STANDARD 20)
 
+if (CMAKE_C_COMPILER_ID MATCHES "GNU")
+    add_compile_options(-Wall -Wextra -Werror)
+    add_compile_options(
+            $<$<COMPILE_LANGUAGE:C>:-w>
+    )
+endif ()
+
 include(FetchContent)
 FetchContent_Declare(SFML
         GIT_REPOSITORY https://github.com/SFML/SFML.git
