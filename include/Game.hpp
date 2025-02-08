@@ -4,24 +4,26 @@
 
 #ifndef GAME_HPP
 #define GAME_HPP
+#include "Player.hpp"
 #include "SFML/Graphics.hpp"
 #include "SFML/Audio.hpp"
 
 
 class Game {
 public:
-    Game(sf::RenderWindow& window, sf::Sprite& sprite, sf::Text& text, sf::Music& music, float moveSpeed);
+    Game(sf::RenderWindow &window, Player &player, sf::Text &text, sf::Music &music);
+
     void run() const;
 
 private:
     void handleInput() const;
+
     void render() const;
 
-    sf::RenderWindow& window;
-    sf::Sprite& sprite;
-    sf::Text& text;
-    sf::Music& music;
-    float moveSpeed;
+    sf::RenderWindow &window;
+    Player &player;
+    sf::Text &text;
+    sf::Music &music;
 };
 
 

@@ -9,7 +9,11 @@
 
 class Player {
 public:
-    Player(sf::Sprite  sprite, float moveSpeed);
+    Player(const sf::Sprite &sprite, float moveSpeed);
+
+    sf::Sprite &getSprite();
+
+    float getMoveSpeed() const;
 
 private:
     sf::Sprite sprite;

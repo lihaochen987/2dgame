@@ -6,6 +6,13 @@
 
 #include "../include/Player.hpp"
 
-Player::Player(sf::Sprite sprite, const float moveSpeed): sprite(std::move(sprite)), moveSpeed(moveSpeed) {
-};
+Player::Player(const sf::Sprite &sprite, const float moveSpeed): sprite(sprite), moveSpeed(moveSpeed) {
+}
 
+sf::Sprite &Player::getSprite() {
+    return sprite;
+}
+
+float Player::getMoveSpeed() const {
+    return moveSpeed;
+};
