@@ -9,67 +9,18 @@
 
 
 class Game {
-    sf::RenderWindow &window;
-    sf::Sprite &sprite;
-    sf::Text &text;
-    sf::Music &music;
-
-    void handleInput() const {
-        constexpr float moveSpeed = 0.5f;
-        const sf::Vector2f position = sprite.getPosition();
-        const sf::FloatRect spriteBounds = sprite.getGlobalBounds();
-
-        if (isKeyPressed(sf::Keyboard::Key::Left)) {
-            if (position.x > 0) {
-                sprite.move(sf::Vector2f(-moveSpeed, 0));
-            }
-        }
-        if (isKeyPressed(sf::Keyboard::Key::Right)) {
-            if (position.x + spriteBounds.position.length() < static_cast<float>(window.getSize().x)) {
-                sprite.move(sf::Vector2f(moveSpeed, 0));
-            }
-        }
-        if (isKeyPressed(sf::Keyboard::Key::Up)) {
-            if (position.y > 0) {
-                sprite.move(sf::Vector2f(0, -moveSpeed));
-            }
-        }
-        if (isKeyPressed(sf::Keyboard::Key::Down)) {
-            if (position.y + spriteBounds.position.length() < static_cast<float>(window.getSize().y)) {
-                sprite.move(sf::Vector2f(0, moveSpeed));
-            }
-        }
-    }
-
-    void render() const {
-        window.clear();
-        window.draw(sprite);
-        window.draw(text);
-        window.display();
-    }
-
 public:
-    Game(sf::RenderWindow &window, sf::Sprite &sprite, sf::Text &text, sf::Music &music)
-        : window(window)
-          , sprite(sprite)
-          , text(text)
-          , music(music) {
-        music.setLooping(true);
-        music.play();
-    }
+    Game(sf::RenderWindow& window, sf::Sprite& sprite, sf::Text& text, sf::Music& music);
+    void run() const;
 
-    void run() const {
-        while (window.isOpen()) {
-            while (const std::optional event = window.pollEvent()) {
-                if (event->is<sf::Event::Closed>()) {
-                    window.close();
-                }
-            }
+private:
+    void handleInput() const;
+    void render() const;
 
-            handleInput();
-            render();
-        }
-    }
+    sf::RenderWindow& window;
+    sf::Sprite& sprite;
+    sf::Text& text;
+    sf::Music& music;
 };
 
 
