@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <filesystem>
 
+#include "Player.hpp"
 #include "../include/Game.hpp"
 
 int main() {
@@ -26,6 +27,8 @@ int main() {
     if (!music.openFromFile("assets/nice_music.mp3")) {
         return -1;
     }
+
+    Player player(sprite, 1.0f);
 
     Game game(window, sprite, text, music);
     game.run();

@@ -15,7 +15,9 @@ FetchContent_MakeAvailable(SFML)
 
 add_executable(main src/main.cpp
         src/core/game.cpp
-        include/game.hpp)
+        include/game.hpp
+        src/core/Player.cpp
+        include/Player.hpp)
 target_compile_features(main PRIVATE cxx_std_17)
 target_link_libraries(main PRIVATE SFML::Graphics SFML::Audio)
 
