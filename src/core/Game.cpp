@@ -2,7 +2,7 @@
 // Created by lihao on 9/02/2025.
 //
 
-#include "game.hpp"
+#include "../include/Game.hpp"
 
 void Game::handleInput() const {
     constexpr float moveSpeed = 0.5f;

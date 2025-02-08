@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <filesystem>
 
-#include "core/game.hpp"
+#include "../include/Game.hpp"
 
 int main() {
     sf::RenderWindow window(sf::VideoMode({800, 600}), "Epic Game");
