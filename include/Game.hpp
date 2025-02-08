@@ -16,8 +16,6 @@ public:
     void run() const;
 
 private:
-    void handleInput() const;
-
     void render() const;
 
     sf::RenderWindow &window;

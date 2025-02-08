@@ -28,7 +28,7 @@ int main() {
         return -1;
     }
 
-    Player player(sprite, 0.5f);
+    Player player(sprite, 0.5f, window);
 
     Game game(window, player, text, music);
     game.run();
