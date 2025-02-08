@@ -13,7 +13,7 @@ public:
 
 private:
     sf::Sprite sprite;
-    float &moveSpeed;
+    float moveSpeed;
 };
 
 

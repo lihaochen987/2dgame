@@ -30,7 +30,7 @@ int main() {
 
     Player player(sprite, 1.0f);
 
-    Game game(window, sprite, text, music);
+    Game game(window, sprite, text, music, 0.5f);
     game.run();
 
     return 0;

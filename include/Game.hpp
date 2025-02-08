@@ -10,7 +10,7 @@
 
 class Game {
 public:
-    Game(sf::RenderWindow& window, sf::Sprite& sprite, sf::Text& text, sf::Music& music);
+    Game(sf::RenderWindow& window, sf::Sprite& sprite, sf::Text& text, sf::Music& music, float moveSpeed);
     void run() const;
 
 private:
@@ -21,6 +21,7 @@ private:
     sf::Sprite& sprite;
     sf::Text& text;
     sf::Music& music;
+    float moveSpeed;
 };
 
 

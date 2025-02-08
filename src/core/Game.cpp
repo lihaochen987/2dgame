@@ -5,7 +5,6 @@
 #include "../include/Game.hpp"
 
 void Game::handleInput() const {
-    constexpr float moveSpeed = 0.5f;
     const sf::Vector2f position = sprite.getPosition();
     const sf::FloatRect spriteBounds = sprite.getGlobalBounds();
 
@@ -38,11 +37,12 @@ void Game::render() const {
     window.display();
 }
 
-Game::Game(sf::RenderWindow &window, sf::Sprite &sprite, sf::Text &text, sf::Music &music)
+Game::Game(sf::RenderWindow &window, sf::Sprite &sprite, sf::Text &text, sf::Music &music, const float moveSpeed)
     : window(window)
       , sprite(sprite)
       , text(text)
-      , music(music) {
+      , music(music)
+      , moveSpeed(moveSpeed) {
     music.setLooping(true);
     music.play();
 }
