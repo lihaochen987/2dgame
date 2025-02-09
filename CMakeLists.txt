@@ -24,7 +24,11 @@ add_executable(main src/main.cpp
         src/core/game.cpp
         include/game.hpp
         src/core/Player.cpp
-        include/Player.hpp)
+        include/Player.hpp
+        src/core/CharacterSelect.cpp
+        include/CharacterSelect.hpp
+        src/core/Character.cpp
+        include/Character.hpp)
 target_link_libraries(main PRIVATE SFML::Graphics SFML::Audio)
 
 if (WIN32)
