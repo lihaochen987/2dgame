@@ -46,3 +46,10 @@ add_custom_command(TARGET main POST_BUILD
 target_include_directories(main PUBLIC
         ${PROJECT_SOURCE_DIR}/include
 )
+
+enable_testing()
+
+find_package(GTest CONFIG REQUIRED)
+target_link_libraries(main PRIVATE GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
+
+add_test(AllTestsInMain main)

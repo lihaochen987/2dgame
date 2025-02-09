@@ -27,6 +27,8 @@ int main() {
     if (!music.openFromFile("assets/wallace_and_gromit_theme.mp3")) {
         return -1;
     }
+    music.setLooping(true);
+    music.play();
 
     Player player(sprite, 0.5f, window);
 

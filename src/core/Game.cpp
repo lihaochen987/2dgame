@@ -16,8 +16,6 @@ Game::Game(sf::RenderWindow &window, Player &player, sf::Text &text, sf::Music &
       , player(player)
       , text(text)
       , music(music) {
-    music.setLooping(true);
-    music.play();
 }
 
 void Game::run() const {
