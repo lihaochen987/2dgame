@@ -26,7 +26,7 @@ void Player::move() {
         }
     }
     if (isKeyPressed(sf::Keyboard::Key::Right)) {
-        if (position.x + spriteBounds.position.length() < static_cast<float>(window.getSize().x)) {
+        if (position.x + spriteBounds.size.x < static_cast<float>(window.getSize().x)) {
             sprite.move(sf::Vector2f(moveSpeed, 0));
         }
     }
@@ -36,7 +36,7 @@ void Player::move() {
         }
     }
     if (isKeyPressed(sf::Keyboard::Key::Down)) {
-        if (position.y + spriteBounds.position.length() < static_cast<float>(window.getSize().y)) {
+        if (position.y + spriteBounds.size.y < static_cast<float>(window.getSize().y)) {
             sprite.move(sf::Vector2f(0, moveSpeed));
         }
     }

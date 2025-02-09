@@ -17,8 +17,8 @@ int main() {
     sprite.setScale(sf::Vector2f(0.25f, 0.25f));
 
     sf::FloatRect spriteBounds = sprite.getGlobalBounds();
-    sprite.setPosition(sf::Vector2f(400 - spriteBounds.position.x / 2,
-                                  300 - spriteBounds.position.y / 2));
+    sprite.setPosition(sf::Vector2f(400 - spriteBounds.size.x / 2,
+                                  300 - spriteBounds.size.y / 2));
 
     const sf::Font font("assets/arial.ttf");
     sf::Text text(font, "I'M IN A GAME GROMIT!", 50);

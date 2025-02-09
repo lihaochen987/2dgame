@@ -25,8 +25,16 @@ add_executable(main src/main.cpp
         include/game.hpp
         src/core/Player.cpp
         include/Player.hpp)
-target_compile_features(main PRIVATE cxx_std_17)
 target_link_libraries(main PRIVATE SFML::Graphics SFML::Audio)
+
+if (WIN32)
+    add_custom_command(TARGET main POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            $<TARGET_RUNTIME_DLLS:main>
+            $<TARGET_FILE_DIR:main>
+            COMMAND_EXPAND_LISTS
+    )
+endif()
 
 # Copy assets to binary directory
 add_custom_command(TARGET main POST_BUILD
