@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.30)
 project(2dgame)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 
 if (CMAKE_C_COMPILER_ID MATCHES "GNU")
     add_compile_options(-Wall -Wextra -Werror)

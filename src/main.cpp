@@ -9,7 +9,7 @@ int main() {
     sf::RenderWindow window(sf::VideoMode({800, 600}), "Epic Game");
 
     sf::Texture texture;
-    if (!texture.loadFromFile("assets/cute_image.jpg")) {
+    if (!texture.loadFromFile("assets/wallace.jpg")) {
         return -1;
     }
 
@@ -24,7 +24,7 @@ int main() {
     sf::Text text(font, "I'M IN A GAME GROMIT!", 50);
 
     sf::Music music;
-    if (!music.openFromFile("assets/nice_music.mp3")) {
+    if (!music.openFromFile("assets/wallace_and_gromit_theme.mp3")) {
         return -1;
     }
 
