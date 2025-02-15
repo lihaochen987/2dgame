@@ -10,7 +10,9 @@ CharacterSelect::CharacterSelect(sf::RenderWindow &window, std::vector<Character
 
 void CharacterSelect::render() const {
     window.clear();
-    window.draw(characters[0].getSprite());
+    for (auto character : characters) {
+        window.draw(character.getSprite());
+    }
     window.draw(text);
     window.display();
 }

@@ -10,23 +10,23 @@ int main() {
     // Screen
     sf::RenderWindow window(sf::VideoMode({800, 600}), "Epic Game");
 
-
-    sf::Texture texture;
-    if (!texture.loadFromFile("assets/wallace.jpg")) {
-        return -1;
-    }
-    sf::Sprite wallaceSprite(texture);
+    // Initialize font
     const sf::Font font("assets/arial.ttf");
 
+    // Initialize characters
+    sf::Texture wallaceTexture("assets/wallace.jpg");
+    sf::Sprite wallaceSprite(wallaceTexture);
+    sf::Texture gromitTexture("assets/gromit.jpg");
+    sf::Sprite gromitSprite(gromitTexture);
 
     // Character select
-    auto wallace = Character(wallaceSprite);
-    std::vector characters{wallace};
+    std::vector characters{Character(wallaceSprite), Character(gromitSprite)};
     sf::Text characterSelectText(font, "Choose your character", 30);
     CharacterSelect characterSelect(window, characters, characterSelectText);
     characterSelect.run();
 
-    wallaceSprite.setScale(sf::Vector2f(0.25f, 0.25f));
+    wallaceSprite.setScale(sf::Vector2f(0.25, 0.25));
+    gromitSprite.setScale(sf::Vector2f(0.06, 0.06));
 
     sf::FloatRect spriteBounds = wallaceSprite.getGlobalBounds();
     wallaceSprite.setPosition(sf::Vector2f(400 - spriteBounds.size.x / 2,
